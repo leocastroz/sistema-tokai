@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+a:focus {
+  outline: none;
+  background-color: none;
+}
+
+body {
+  background-color: #151617;
+  /* background-image: url('/img/capa.webp'); */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Figtree", sans-serif;;
+}
+
+#app {
+  font-weight: normal;
+}
+
+/* SCROLL */
+/* ::selection {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+} */
+
+body::-webkit-scrollbar {
+  width: 14px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #2c2c2c;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #616161;
+  border-radius: 20px;
+  border: 4px solid #2c2c2c;
+}
