@@ -1,12 +1,12 @@
 // import { BeakerIcon } from '@heroicons/vue/24/solid'
-import DashboardIcon from '../assets/dashboard.svg'
-import TicketIcon from '../assets/ticket.svg'
-import StarIcon from '../assets/star.svg'
-import CubeIcon from '../assets/cube.svg'
-import WalletIcon from '../assets/wallet.svg'
-import ToDoIcon from '../assets/todo.svg'
-import ClientesIcon from '../assets/clientes.svg'
-import ConfigIcon from '../assets/config.svg'
+import DashboardIcon from "../assets/dashboard.svg";
+import TicketIcon from "../assets/ticket.svg";
+import StarIcon from "../assets/star.svg";
+import CubeIcon from "../assets/cube.svg";
+import WalletIcon from "../assets/wallet.svg";
+import ToDoIcon from "../assets/todo.svg";
+import ClientesIcon from "../assets/clientes.svg";
+import ConfigIcon from "../assets/config.svg";
 
 export default {
   // EMPRESA-GALERADAPA263
@@ -25,15 +25,13 @@ export default {
     { name: "Configurações", to: "/configuracoes", icon: ConfigIcon },
     // { name: "Suporte - BROEX", to: "/suporte", icon: ConfigIcon },
   ],
-  admin: [
-    { name: "GitHub", to: "/github", icon: ClientesIcon },
-  ],
+  admin: [{ name: "GitHub", to: "/github", icon: ClientesIcon }],
   admin: [
     { name: "Dashboard", to: "/dashboard", icon: DashboardIcon },
     { name: "Cadastro", to: "/professor", icon: "fa-solid fa-chart-line" },
   ],
   essencial: [],
-   // GALERA DA PA - 2025
+  // TOKAI - 2025
   // elementar: [
   //   { name: "Dashboard", to: "/dashboard", icon: DashboardIcon },
   //   { name: "Camisetas", to: "/professor", icon: StarIcon },
@@ -51,7 +49,7 @@ export default {
   //   // { name: "Financeiro", to: "/financeiro", icon: "fa-solid fa-coins" },
   //   // { name: "Eventos", to: "/eventos", icon: "fa-solid fa-calendar-days" },
   //   // { name: "Gastos", to: "/gastos", icon: "fa-solid fa-hand-holding-dollar" },
-    
+
   //   // { name: "FUNCIONÁRIOS", to: "/funcionarios", icon: "fa-solid fa-user-large" },
   //   // { name: "PESSOAS", to: "/pessoas", icon: "fa-solid fa-user-large" },
   //   // { name: "RECLAMAÇÕES", to: "/reclamacoes", icon: "fa-solid fa-circle-exclamation" },
@@ -78,7 +76,7 @@ export default {
     // { name: "Financeiro", to: "/financeiro", icon: "fa-solid fa-coins" },
     // { name: "Eventos", to: "/eventos", icon: "fa-solid fa-calendar-days" },
     // { name: "Gastos", to: "/gastos", icon: "fa-solid fa-hand-holding-dollar" },
-    
+
     // { name: "FUNCIONÁRIOS", to: "/funcionarios", icon: "fa-solid fa-user-large" },
     // { name: "PESSOAS", to: "/pessoas", icon: "fa-solid fa-user-large" },
     // { name: "RECLAMAÇÕES", to: "/reclamacoes", icon: "fa-solid fa-circle-exclamation" },
@@ -90,7 +88,11 @@ export default {
     { name: "Marca", to: "/marca-posto-rota", icon: TicketIcon },
     { name: "Vendas", to: "/vendas-posto-rota", icon: TicketIcon },
     { name: "Novo Acesso", to: "/novo-acesso-posto-rota", icon: ClientesIcon },
-    { name: "Funcionários", to: "/funcionarios-posto-rota", icon: ClientesIcon },
+    {
+      name: "Funcionários",
+      to: "/funcionarios-posto-rota",
+      icon: ClientesIcon,
+    },
     { name: "Configurações", to: "/configuracoes", icon: ConfigIcon },
   ],
   frentista: [
@@ -109,7 +111,11 @@ export default {
   premium: [],
   student: [
     { name: "DASHBOARD", to: "/dashboard", icon: DashboardIcon },
-    { name: "PROFESSORES(a)", to: "/professor", icon: "fa-solid fa-user-graduate" },
+    {
+      name: "PROFESSORES(a)",
+      to: "/professor",
+      icon: "fa-solid fa-user-graduate",
+    },
   ],
   shop: [
     { name: "DASHBOARD", to: "/dashboard", icon: DashboardIcon },

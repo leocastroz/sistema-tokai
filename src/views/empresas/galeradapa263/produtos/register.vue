@@ -136,12 +136,15 @@
             v-model="professor.tipo"
             class="w-full bg-zinc-800 rounded px-3 py-2 text-gray-300 border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent appearance-none cursor-pointer"
           >
-            <option value="ervamate">Erva Mate</option>
-            <option value="bombaterere">Bomba Terere</option>
-            <option value="copoterere">Copo Terere</option>
-            <option value="garrafasinox">Garrafas Inox</option>
-            <option value="canivetesfacas">Canivetes e Facas</option>
-            <option value="bonestexasfarm">Bones Texas Farm</option>
+            <option value="" disabled>Selecione uma categoria</option>
+            <option value="lancamentos">Lançamento</option>
+            <option value="oleos">Óleos</option>
+            <option value="suspensao">Suspensão</option>
+            <option value="motor">Motor</option>
+            <option value="pneus">Pneus</option>
+            <option value="kittransmissao">Kit transmissão</option>
+            <option value="eletrica">Elétrica</option>
+            <option value="carenagens">Carenagens</option>
           </select>
           <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
             <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

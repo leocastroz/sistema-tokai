@@ -59,7 +59,7 @@
         </div>
       </div>
       <div class="m-2 w-full sm:w-full md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4">
-        <p class="text-[13px] py-1">CAMPO DESCONTO</p>
+        <p class="text-[13px] py-1">CAMPO DESCONTO aa</p>
         <div class="relative">
           <input
             class="bg-[#6464648c] rounded drop-shadow-lg px-2 py-1 text-gray-400 focus:outline-none w-full"
