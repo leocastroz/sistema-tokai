@@ -48,7 +48,9 @@
             </td>
             <td class="text-left px-3 w-72 animate__animated animate__fadeIn">{{ professor.nome }}</td>
             <td class="text-left px-3 w-64 animate__animated animate__fadeIn">{{ professor.descricao }}</td>
-            <td class="text-left px-3 w-64 animate__animated animate__fadeIn">{{ professor.categoria }}</td>
+            <td class="text-left px-3 w-64 animate__animated animate__fadeIn">
+              <!-- {{ professor.categoria }} --> Banner
+            </td>
             <td class="animate__animated animate__fadeIn w-56 text-center">
               <i @click="$emit('delete', professor)" class="fa-solid fa-trash text-[13px] text-white bg-red-500 items-center p-2 mx-1 rounded drop-shadow-md cursor-pointer hover:bg-red-700 "></i>
 

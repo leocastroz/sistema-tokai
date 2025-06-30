@@ -25,10 +25,10 @@
       <input class="bg-[#6464648c] capitalize rounded drop-shadow-lg border-solid border-[1px] border-slate-400 p-2 text-gray-400 focus:outline-none w-full" v-model="suaSenha" type="text" placeholder="Sua Senha" />
     </div>
 
-    <div class="w-full">
+    <!-- <div class="w-full">
       <p class="text-[13px] py-1 text-white">SEU PERFIL: *</p>
       <input type="file" @change="handleFileUpload" accept="image/png, image/jpeg" class="bg-[#6464648c] rounded drop-shadow-lg border-solid border-[1px] border-slate-400 p-2 text-gray-400 rounded px-2 py-1 text-gray-400 focus:outline-none w-full">
-    </div>
+    </div> -->
 
 
     <button @click="confirmModal" class="bg-blue-500 rounded-full text-white my-5 p-3 text-white w-full cursor-pointer hover:bg-blue-600 hover:text-white">
@@ -117,8 +117,8 @@ const updateFirstName = async () => {
       updateData.cpf = '';
     }
     if (suaSenha.value) updateData.password = suaSenha.value;
-    if (basePhoto.value) updateData.base_photo = basePhoto.value;
-
+    // if (basePhoto.value) updateData.base_photo = basePhoto.value;
+    updateData.base_photo = '';
     const { data, error } = await supabase.auth.admin.updateUserById(userId, {
       ...updateData,
       user_metadata: updateData

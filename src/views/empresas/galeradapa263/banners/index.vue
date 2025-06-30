@@ -126,7 +126,14 @@
       @push-marca="pushedmarca"
       @cancel="toggleModalRegister"
       @uploadImage="selectedImageFile = $event"
-      style="position: fixed; left: 0; top: 0; width: 100vw; height: 100vh"
+      style="
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow-y: scroll;
+      "
     />
     <edit
       v-show="isModalEditVisible"

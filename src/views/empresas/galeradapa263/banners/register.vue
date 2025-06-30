@@ -1,13 +1,36 @@
 <template>
-  <div v-show="isVisible" class="bg-red-300 p-5 rounded-xl drop-shadow-md text-gray-400 animate__animated animate__fadeIn" style="box-shadow: 0px 0px 1px 1px #363636;background-color: #1d1f20;">
-    <div class="flex flex-wrap justify-between">
-      <div class="m-2 w-full sm:w-full md:w-1/3 lg:w-1/4 xl:w-1/6 2xl:w-full mb-4">
-        <p class="text-[13px] py-1">NOME</p>
+  <div v-show="isVisible" class="bg-zinc-900 p-6 rounded-xl drop-shadow-md text-gray-300 animate__animated animate__fadeIn">
+    <h2 class="text-xl font-semibold mb-6 text-white">Cadastrar Novo Item</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mb-6">
+      <!-- NOME -->
+      <div class="space-y-2">
+        <label for="nome" class="block text-sm font-medium text-gray-400">NOME</label>
         <input
-          class="bg-[#6464648c] rounded drop-shadow-lg px-2 py-1 text-gray-400 focus:outline-none w-full" v-model="professor.nome" type="text" name="name" label="Nome completo *" id="nome" />
+          id="nome"
+          v-model="professor.nome"
+          type="text"
+          class="w-full bg-zinc-800 rounded px-3 py-2 text-gray-300 border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+        />
       </div>
 
-      <div class="m-2 w-full sm:w-full md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4">
+      <div class="space-y-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mb-6">
+        <label for="descricao" class="block text-sm font-medium text-gray-400">DESCRIÇÃO</label>
+        <textarea
+          id="descricao"
+          v-model="professor.descricao"
+          rows="3"
+          class="w-full bg-zinc-800 rounded px-3 py-2 text-gray-300 border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent resize-none"
+        ></textarea>
+      </div>
+
+    </div>
+
+
+    <div class="flex flex-wrap justify-between">
+     
+
+      <!-- <div class="m-2 w-full sm:w-full md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4">
         <p class="text-[13px] py-1">CATEGORIA</p>
         <select
           class="bg-[#6464648c] rounded drop-shadow-lg px-2 py-1 text-gray-400 focus:outline-none w-full cursor-pointer"
@@ -20,39 +43,83 @@
           <option value="tenisfeminino">Sandália feminina</option>
           <option value="bone">Boné</option>
         </select>
-      </div>
+      </div> -->
 
-      <div class="m-2 w-full sm:w-full md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4">
+      <!-- <div class="m-2 w-full sm:w-full md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4">
         <p class="text-[13px] py-1">DESCRIÇÃO</p>
         <textarea class="resize-none bg-[#6464648c] rounded drop-shadow-lg px-2 py-1 text-gray-400 focus:outline-none w-full" v-model="professor.descricao" type="text" name="descricao" label="Formação *" id="descricao">
           </textarea>
-      </div>
+      </div> -->
     </div>
-    
-    <div class="flex w-full justify-around py-5">
-      <div class="grid justify-center items-center">
-        <div class="justify-center items-center py-5">
-          <p><span class="text-white">Já possuo</span> uma imagem para <span v-if="!previewImage" @click="imagemPronta" class="bg-blue-500 py-1 px-2 rounded-full text-md cursor-pointer text-white mx-1">+</span></p>
-          <div v-if="imagemCortada" class="animate__animated animate__fadeIn">
-            <img :src="previewImage" class="w-52 rounded" />
+
+    <!-- Seção de imagens -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 border-t border-zinc-700 pt-6">
+      <!-- Já possuo uma imagem -->
+      <div class="space-y-4">
+        <div class="flex items-center">
+          <h3 class="text-white font-medium">Já possuo uma imagem para</h3>
+          <button 
+            v-if="!previewImage && !imagemCortada" 
+            @click="imagemPronta" 
+            class="ml-2 bg-blue-500 hover:bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center transition-colors"
+          >
+            +
+          </button>
+        </div>
+
+        <!-- <div class="m-2">
+          <p>image_one:</p>
+          <input
+            class="bg-gray-200 rounded drop-shadow-lg border-solid border-[1px] border-slate-400 px-2 py-1 text-gray-500 focus:outline-none"
+            v-model="professor.image_one" type="text" name="image_one" label="Formação *" id="image_one" readonly />
+          <input type="file" @change="onFileChange" />
+          <div v-if="imagePreview">
+            <img class="previd" :src="imagePreview" alt="Image Preview" />
+            <button @click="removeImage">Remove Image</button>
+          </div>
+        </div> -->
+        
+        <div v-if="imagemCortada" class="animate__animated animate__fadeIn">
+          <div v-if="previewImage" class="mb-3">
+            <img :src="previewImage" class="w-52 h-auto rounded border border-zinc-700" alt="Preview" />
             <input type="hidden" v-model="professor.fileName">
-       
-            <div v-if="!previewImage" @click="executeInput" class="my-4 bg-[#151617] hover:bg-[#6464648c] hover:border hover:border-1 border-[#6464648c] border border-1 hover:border-gray-500 rounded-md cursor-pointer flex flex-col items-center justify-between p-3">
-              <!-- SUBIR IMAGEM -->
-              <img src="@/assets/nuvem.svg" alt="upload" class="w-14 mb-3">
-              <p>Selecionar arquivo</p>
-              <p class="text-xs">.png | jpeg</p>
-              <input v-show="false" type="file" name="upload" class="prove inline-block z-10 w-full top-0 left-0 opacity-0 rounded-xs cursor-pointer" @change="handleFileChange" accept="image/png, image/jpeg" ref="fileInput">
-              <!-- SUBIR IMAGEM -->
+            <button 
+              @click="apagaImage" 
+              class="mt-3 bg-red-500 hover:bg-red-600 text-white px-4 py-1.5 rounded text-sm transition-colors"
+            >
+              Excluir
+            </button>
+          </div>
+          
+          <div 
+            v-else 
+            @click="executeInput" 
+            class="border-2 border-dashed border-zinc-700 rounded-lg p-6 text-center cursor-pointer hover:border-emerald-500 transition-colors"
+          >
+            <div class="flex flex-col items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-zinc-500 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+              </svg>
+              <p class="text-sm font-medium text-gray-300 mb-1">Selecionar arquivo</p>
+              <p class="text-xs text-gray-500">.png | .jpeg</p>
             </div>
-            <button v-if="previewImage" @click="apagaImage" class="bg-red-500 text-red-100 px-2 rounded my-3">excluir</button>
+            <input 
+              ref="fileInput"
+              type="file" 
+              class="hidden" 
+              @change="handleFileChange" 
+              accept="image/png, image/jpeg"
+            >
           </div>
         </div>
       </div>
-      <div v-if="!tenhoImage" class="flex items-center">
+      
+      <!-- Corte sua imagem -->
+      <div v-if="!tenhoImage" class="flex items-start">
         <CutImage />
       </div>
     </div>
+    
     <div class="m-2 w-full flex justify-end mb-4 gap-4">
       <button @click="registerProfessor" class="bg-blue-500 px-3 rounded text-white text-[13px] py-1 mr-2">
         Cadastrar Agora
@@ -80,6 +147,7 @@ const imagemCortada = ref(false);
 const tenhoImage = ref(false);
 const selectedFile = ref('');
 const previewImage = ref('');
+
 
 const selectedItem = ref(null);
 
